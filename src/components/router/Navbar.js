@@ -11,6 +11,11 @@ const navbar = () => {
         <li>
           <Link to="/about">About</Link>
         </li>
+        <li>
+          <Link to="/projects" style={{ textDecoration: "none" }}>
+            Projects
+          </Link>
+        </li>
       </ul>
     </nav>
   );

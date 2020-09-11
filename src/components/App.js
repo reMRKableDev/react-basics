@@ -11,6 +11,9 @@ import Counter from "./lifecycle-examples/Counter"; */
 import Home from "./router/Home";
 import About from "./router/About";
 import Navbar from "./router/Navbar";
+import { projects as Projects } from "./url-params/Projects";
+import ProjectDetails from "./url-params/ProjectDetails";
+import NotFoundPage from "./router/NotFoundPage";
 class App extends Component {
   /*   constructor(props) {
     super(props);
@@ -30,8 +33,10 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
+          <Route exact path="/projects" component={Projects} />
+          <Route exact path="/projects/:id" component={ProjectDetails} />
+          <Route path="*" component={NotFoundPage} />
         </Switch>
-        
       </div>
     );
   }
