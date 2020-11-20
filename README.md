@@ -23,7 +23,7 @@ Git
 To get this project on your local machine, you first need to clone it using the `git clone` command.
 
 ```
-git clone https://github.com/reMRKableDev/dubsterdam-page.git
+git clone https://github.com/reMRKableDev/react-basics.git
 ```
 
 Running this on your terminal will ensure you receive the latest version with all it's changes.
