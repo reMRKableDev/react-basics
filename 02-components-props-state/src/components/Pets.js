@@ -4,7 +4,7 @@ import React from "react";
 const Pets = (props) => {
   const showPets = () =>
     props.petList.map((pet) => (
-      <article>
+      <article key={pet.id}>
         <h2>Pet # {pet.id}</h2>
         <p>Name: {pet.name}</p>
         <p>Type: {pet.type}</p>
