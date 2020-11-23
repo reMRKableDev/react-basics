@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Counter.css";
 
 /* Functional Components with State (using hooks) */
 const CounterHook = () => {
@@ -8,7 +9,7 @@ const CounterHook = () => {
   const handleDecrementClick = () => setCount(count - 1);
 
   return (
-    <div>
+    <div className="counter-container">
       <h3>Functional component with state using hooks</h3>
       <p>{count}</p>
       <button onClick={handleDecrementClick}>-</button>

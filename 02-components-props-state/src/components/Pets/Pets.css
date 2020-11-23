@@ -1,0 +1,10 @@
+.notice {
+  border: 2px solid orange;
+}
+
+.pet-container {
+  border: 2px dashed black;
+  padding: 10px;
+  margin: 15px;
+  width: 10em;
+}

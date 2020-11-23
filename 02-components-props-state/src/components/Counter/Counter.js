@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./Counter.css";
 
 /* Class Components with State */
 class Counter extends Component {
@@ -15,7 +16,7 @@ class Counter extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="counter-container">
         <h3>Class component with state the modern way</h3>
         <p>{this.state.count}</p>
         <button onClick={this.handleDecrementClick}>-</button>
