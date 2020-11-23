@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 /* Functional Component - getting props via destructuring */
-/* const Header = ({ totalPets }) => {
+/* const PetLengthNotice = ({ totalPets }) => {
   return (
     <div>
       <h2>The total number of pets is {totalPets}</h2>
@@ -10,7 +10,7 @@ import React, { Component } from "react";
 }; */
 
 /* Class Component - getting props via this.props */
-class Header extends Component {
+class PetLengthNotice extends Component {
   render() {
     return (
       <div>
@@ -20,4 +20,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default PetLengthNotice;
