@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import PetsLengthNotice from "../PetLengthNotice/PetLengthNotice";
+import PetsLength from "../Pets/PetsLength";
 import Pets from "../Pets/Pets";
 import Counter from "../Counter/Counter";
 import CounterHook from "../Counter/CounterHook";
@@ -30,7 +30,7 @@ class App extends Component {
     return (
       <section className="App">
         <h1>Passing data with props</h1>
-        <PetsLengthNotice totalPets={nestedPetList.length} />
+        <PetsLength totalPets={nestedPetList.length} />
         <Pets petList={nestedPetList} />
         <hr />
         <h1>State</h1>
