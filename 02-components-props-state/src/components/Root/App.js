@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
+
+/* Imported components */
 import PetList from "../Pets/PetList";
 import Counter from "../Counter/Counter";
-import CounterHook from "../Counter/CounterHook";
 import CounterOldState from "../Counter/CounterOldState";
+import CounterHook from "../Counter/CounterHook";
 
 const nestedPetList = [
   {
@@ -22,30 +24,29 @@ const nestedPetList = [
     type: "Chipmunk",
   },
 ];
-/* Class component */
+
+/* Class Component */
 class App extends Component {
   state = {
-    selectedPet: {},
+    selectedPet: "",
   };
 
-  handleSelectedClick = (clickedPet) => {
-    this.setState({ selectedPet: clickedPet });
+  handleSelectedClick = (incomingPet) => {
+    this.setState({ selectedPet: incomingPet });
   };
-
-  showSelectedPet = () =>
-    this.state.selectedPet && (
-      <p>The selected pet is {this.state.selectedPet.name}</p>
-    );
 
   render() {
     return (
       <section className="app">
         <h1>Props</h1>
-        {this.showSelectedPet()}
+        <p>
+          The selected pet is <b>{this.state.selectedPet.name}</b>
+        </p>
+
         <div className="container">
           <PetList
-            petList={nestedPetList}
-            handleSelectedClick={this.handleSelectedClick}
+            nestedPetListFromApp={nestedPetList}
+            onClickHandler={this.handleSelectedClick}
           />
         </div>
         <h1>State</h1>

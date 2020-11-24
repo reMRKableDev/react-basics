@@ -7,8 +7,8 @@ class CounterOldState extends Component {
     this.state = { count: 0 };
 
     /* We need to implicitly tell our constructor which methods we want to bind to the class. */
-    this.handleIncrementClick = this.handleIncrementClick.bind(this);
-    this.handleDecrementClick = this.handleDecrementClick.bind(this);
+    this.handleIncrementClick = this.handleIncrementClick.bind(this)
+    this.handleDecrementClick = this.handleDecrementClick.bind(this)
   }
 
   handleIncrementClick() {
