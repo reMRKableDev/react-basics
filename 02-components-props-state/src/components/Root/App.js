@@ -40,7 +40,7 @@ class App extends Component {
       <section className="app">
         <h1>Props</h1>
         <p>
-          The selected pet is <b>{this.state.selectedPet}</b>
+          The selected pet is <b>{this.state.selectedPet.name}</b>
         </p>
 
         <div className="container">

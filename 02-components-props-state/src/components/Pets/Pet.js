@@ -3,7 +3,7 @@ import "./Pets.css";
 
 /* Functional component with destructuring of props */
 const Pet = ({ pet, onClickHandler }) => {
-  const onClickHandlerForPet = () => onClickHandler(pet.name);
+  const onClickHandlerForPet = () => onClickHandler(pet);
 
   return (
     <article className="pet-container">
