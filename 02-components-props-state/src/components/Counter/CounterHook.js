@@ -3,7 +3,7 @@ import "./Counter.css";
 
 /* Functional Components with State (using hooks) */
 const CounterHook = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(5);
 
   const handleIncrementClick = () => setCount(count + 1);
   const handleDecrementClick = () => setCount(count - 1);
