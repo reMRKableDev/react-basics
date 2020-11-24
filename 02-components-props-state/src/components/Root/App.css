@@ -1,0 +1,15 @@
+h1 {
+  text-transform: uppercase;
+}
+
+.app {
+  text-align: center;
+}
+
+.container {
+  border: 2px solid blue;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  margin: 15px 0;
+}
