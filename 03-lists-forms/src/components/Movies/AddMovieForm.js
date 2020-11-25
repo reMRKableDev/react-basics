@@ -29,7 +29,7 @@ const AddMovieForm = (props) => {
     setAllValues({ ...allValues, [name]: value });
   };
 
-  // Form submission -
+  // Form submission
   const handleFormSubmission = (event) => {
     // Stops the default action of a form to refresh on submission
     event.preventDefault();
