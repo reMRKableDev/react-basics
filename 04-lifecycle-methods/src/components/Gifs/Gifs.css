@@ -1,0 +1,17 @@
+.gif-list {
+  width: 30vw;
+  overflow-y: scroll;
+}
+
+.gif {
+  width: 100%;
+}
+
+.gif-selected {
+  width: 100%;
+  height: 100%;
+}
+
+.gif-selected img {
+  width: 50%;
+}
