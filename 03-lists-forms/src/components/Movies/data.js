@@ -1,7 +1,7 @@
 export const movies = [
-  { id: "AMLsriUkE", title: "Jurassic Park", director: "Steven Spielberg" },
-  { id: "6dKZxwwmN", title: "Sharknado", director: "Anthony C. Ferrante" },
-  { id: "z2uykusRE", title: "Titanic", director: "James Cameron" },
+  { title: "Jurassic Park", director: "Steven Spielberg" },
+  { title: "Sharknado", director: "Anthony C. Ferrante" },
+  { title: "Titanic", director: "James Cameron" },
 ];
 
 export const dynamicMoviesList = [

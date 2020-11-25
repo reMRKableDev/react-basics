@@ -1,7 +1,9 @@
 import React from "react";
 import "./Movies.css";
 
+
 const ImprovedMovieCard = (props) => {
+  // Conditional rendering for 
   const showHasOscarsTernary = () =>
     props.hasOscars ? (
       <p>Got the Oscar Award! </p>
@@ -44,19 +46,20 @@ const ImprovedMovieCard = (props) => {
     <div className="movies-card-improved">
       <h2>{props.title}</h2>
       <p>{props.director}</p>
+
       <p>
-        <b> Ternary</b>
+        <b>Ternary</b>
       </p>
       {showHasOscarsTernary()}
 
       <p>
-        <b>A more logical way</b>
+        <b>&&</b>
       </p>
       {showOscarsImplicit()}
       {notShowOscarsImplicit()}
 
       <p>
-        <b>Complex logic</b>
+        <b>Complex Conditional</b>
       </p>
       {complexConditional()}
 

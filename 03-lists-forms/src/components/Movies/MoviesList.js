@@ -1,11 +1,13 @@
 import React from "react";
+import "./Movies.css";
 
-import MovieCard from "./MovieCard";
 import { movies } from "./data";
+import MovieCard from "./MovieCard";
 
-const MoviesList = () =>
-  movies.map((item) => (
-    <MovieCard key={item.id} title={item.title} director={item.director} />
+const MoviesList = () => {
+  return movies.map((movieItem, index) => (
+    <MovieCard key={index} {...movieItem} />
   ));
+};
 
 export default MoviesList;
