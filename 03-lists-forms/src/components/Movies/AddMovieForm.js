@@ -9,53 +9,41 @@ const initialState = {
 };
 
 const AddMovieForm = (props) => {
-  /* const [title, setTitle] = useState("");
-  const [director, setDirector] = useState("");
-  const [hasOscars, setHasOscars] = useState(false);
-  const [IMDbRating, setIMDbRating] = useState(""); */
-
   const [allValues, setAllValues] = useState(initialState);
 
+  // change handler - it monitors the values of input and allow us to save those values to our state
   const inputChangeHandler = (event) => {
+    // Get the input's name, type, value or check status from the event.target
+    // event - the user action on the frontend, ie: typing, clicking etc
+    // event.target - where the data that results from a user doing an action resides.
     let { name, value, type, checked } = event.target;
 
-    // special case for checkboxes (where boolean value is hold in .checked property)
+    // To check for a checkbox, and set the value of that input to either true or false
     if (type === "checkbox") {
       value = checked;
     }
 
+    // Set the new values coming in from the input fields
+    // ...allValues - using a spread operator, we take into account any previous data that existed in the state
+    // [name]: value - sets the new values from the form the the state.
     setAllValues({ ...allValues, [name]: value });
   };
 
-  /*   const titleInputChangeHandler = (event) => setTitle(event.target.value);
-  const directorInputChangeHandler = (event) => setDirector(event.target.value);
-  const hasOscarsInputChangeHandler = (event) => setHasOscars(event.target.checked);
-  const IMDbRatingInputChangeHandler = (event) => setIMDbRating(event.target.value); */
-
-  const handleFormSubmit = (event) => {
+  // Form submission -
+  const handleFormSubmission = (event) => {
+    // Stops the default action of a form to refresh on submission
     event.preventDefault();
 
-    /* const newMovie = {
-      title,
-      director,
-      hasOscars,
-      IMDbRating,
-    };
-
-    props.addMovie(newMovie);
-
-    setTitle("");
-    setDirector("");
-    setHasOscars(false);
-    setIMDbRating(""); */
-
+    // Add new movie to the DynamicList
     props.addMovie(allValues);
+
+    // Reset state
     setAllValues(initialState);
   };
 
   return (
     <div>
-      <form onSubmit={handleFormSubmit} className="movie-form-container">
+      <form onSubmit={handleFormSubmission} className="movie-form-container">
         <label>Title:</label>
         <input
           type="text"
