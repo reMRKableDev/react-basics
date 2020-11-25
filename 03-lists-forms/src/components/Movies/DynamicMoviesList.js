@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import AddMovieForm from "./AddMovieForm";
 import { dynamicMoviesList } from "./data";
 import ImprovedMovieCard from "./ImprovedMovieCard";
 
@@ -25,8 +26,18 @@ const DynamicMovieList = () => {
     (movieItem) => movieItem.hasOscars === showOscarAwarded
   );
 
+  // Add movie handler
+  const addMovieHandler = (theMovie) => {
+    const moviesCopy = [...movies]; // copy!
+    moviesCopy.push(theMovie);
+    setMovies(moviesCopy);
+  };
+
   return (
     <div>
+      {/* Form to add movies */}
+      <AddMovieForm addMovie={addMovieHandler} />
+
       {/* Mapping through the new filtered list so that our button at the bottom can work */}
       {filteredMovies.map((movieItem, index) => (
         <ImprovedMovieCard

@@ -1,21 +1,41 @@
 import React, { useState } from "react";
 import "./Movies.css";
 
+const initialState = {
+  title: "",
+  director: "",
+  hasOscars: false,
+  IMDbRating: "",
+};
+
 const AddMovieForm = (props) => {
-  const [title, setTitle] = useState("");
+  /* const [title, setTitle] = useState("");
   const [director, setDirector] = useState("");
   const [hasOscars, setHasOscars] = useState(false);
-  const [IMDbRating, setIMDbRating] = useState("");
+  const [IMDbRating, setIMDbRating] = useState(""); */
 
-  const titleInputChangeHandler = (e) => setTitle(e.target.value);
-  const directorInputChangeHandler = (e) => setDirector(e.target.value);
-  const hasOscarsInputChangeHandler = (e) => setHasOscars(e.target.checked);
-  const IMDbRatingInputChangeHandler = (e) => setIMDbRating(e.target.value);
+  const [allValues, setAllValues] = useState(initialState);
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
+  const inputChangeHandler = (event) => {
+    let { name, value, type, checked } = event.target;
 
-    const newMovie = {
+    // special case for checkboxes (where boolean value is hold in .checked property)
+    if (type === "checkbox") {
+      value = checked;
+    }
+
+    setAllValues({ ...allValues, [name]: value });
+  };
+
+  /*   const titleInputChangeHandler = (event) => setTitle(event.target.value);
+  const directorInputChangeHandler = (event) => setDirector(event.target.value);
+  const hasOscarsInputChangeHandler = (event) => setHasOscars(event.target.checked);
+  const IMDbRatingInputChangeHandler = (event) => setIMDbRating(event.target.value); */
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+
+    /* const newMovie = {
       title,
       director,
       hasOscars,
@@ -27,7 +47,10 @@ const AddMovieForm = (props) => {
     setTitle("");
     setDirector("");
     setHasOscars(false);
-    setIMDbRating("");
+    setIMDbRating(""); */
+
+    props.addMovie(allValues);
+    setAllValues(initialState);
   };
 
   return (
@@ -37,32 +60,32 @@ const AddMovieForm = (props) => {
         <input
           type="text"
           name="title"
-          value={title}
-          onChange={titleInputChangeHandler}
+          value={allValues.title}
+          onChange={inputChangeHandler}
         />
 
         <label>Director:</label>
         <input
           type="text"
           name="director"
-          value={director}
-          onChange={directorInputChangeHandler}
+          value={allValues.director}
+          onChange={inputChangeHandler}
         />
 
         <label>Oscar Awarded:</label>
         <input
           type="checkbox"
           name="hasOscars"
-          checked={hasOscars}
-          onChange={hasOscarsInputChangeHandler}
+          checked={allValues.hasOscars}
+          onChange={inputChangeHandler}
         />
 
         <label>IMDb Rating:</label>
         <input
           type="text"
           name="IMDbRating"
-          value={IMDbRating}
-          onChange={IMDbRatingInputChangeHandler}
+          value={allValues.IMDbRating}
+          onChange={inputChangeHandler}
         />
 
         <button>Submit</button>
