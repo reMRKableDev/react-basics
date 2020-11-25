@@ -1,42 +1,42 @@
 import React, { useState } from "react";
 import { dynamicMoviesList } from "./data";
 import ImprovedMovieCard from "./ImprovedMovieCard";
-import AddMovieForm from "./AddMovieForm";
 
 const DynamicMovieList = () => {
   const [movies, setMovies] = useState(dynamicMoviesList);
   const [showOscarAwarded, setShowOscarAwarded] = useState(false);
 
-  const deleteMovieHandler = (id) => {
+  const deleteMovieHandler = (movieId) => {
+    // Make copy of state so that we aren't directly mutating the state
     const moviesCopy = [...movies];
-    const movieIndex = moviesCopy.findIndex((item) => item.id === id);
+    // Look into movie state and compare incoming id with object id in state
+    const movieIndex = moviesCopy.findIndex((item) => item.id === movieId);
+    // Remove the movie that is similar
     moviesCopy.splice(movieIndex, 1);
+    // setMovies - updating the values in the state 'movies'
     setMovies(moviesCopy);
   };
 
-  const addMovieHandler = (newMovie) => {
-    const moviesCopy = [...movies];
-    moviesCopy.push(newMovie);
-    setMovies(moviesCopy);
-  };
-
+  // function to help toggle movies based on the state of showOscars
   const toggleMovies = () => setShowOscarAwarded(!showOscarAwarded);
 
+  // filterMovies is the new array the results from filtering through the movies state and comparing the values of hasOscars and showOscarAwarded
   const filteredMovies = movies.filter(
     (movieItem) => movieItem.hasOscars === showOscarAwarded
   );
 
   return (
     <div>
-      <AddMovieForm addMovie={addMovieHandler} />
-
-      {filteredMovies.map((item, index) => (
+      {/* Mapping through the new filtered list so that our button at the bottom can work */}
+      {filteredMovies.map((movieItem, index) => (
         <ImprovedMovieCard
           key={index}
-          {...item}
+          {...movieItem}
           deleteOnClick={deleteMovieHandler}
         />
       ))}
+
+      {/* Button that uses the toggleMovies to toggle movies according to whether they have oscars or not */}
       <button onClick={() => toggleMovies()}>
         {showOscarAwarded ? "Hide Oscar Awarded" : "Show Oscar Awarded"}
       </button>

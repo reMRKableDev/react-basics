@@ -2,7 +2,7 @@ import React from "react";
 import "./Pets.css";
 
 /* Functional component with destructuring of props */
-/* const Pet = ({ pet, onClickHandler }) => {
+const Pet = ({ pet, onClickHandler }) => {
   const onClickHandlerForPet = () => onClickHandler(pet);
 
   return (
@@ -13,11 +13,11 @@ import "./Pets.css";
       <button onClick={onClickHandlerForPet}>Select Pet</button>
     </article>
   );
-}; */
+};
 
 /* Functional component with props object */
 /* const Pet = (props) => {
-  const onClickHandlerForPet = () => onClickHandler(props.pet);
+  const onClickHandlerForPet = () => props.onClickHandler(props.pet);
 
   return (
     <article className="pet-container">
@@ -30,7 +30,7 @@ import "./Pets.css";
 }; */
 
 /* Class component with props */
-class Pet extends React.Component {
+/* class Pet extends React.Component {
   onClickHandlerForPet = () => this.props.onClickHandler(this.props.pet);
   
   render() {
@@ -43,6 +43,6 @@ class Pet extends React.Component {
       </article>
     );
   }
-}
+} */
 
 export default Pet;
