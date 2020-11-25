@@ -2,8 +2,8 @@ import React from "react";
 
 const MovieCard = ({ title, director }) => {
   return (
-    <div>
-      <h2>{title}</h2>
+    <div className="movies-card-regular">
+      <h3>{title}</h3>
       <p>Director: {director}</p>
     </div>
   );
