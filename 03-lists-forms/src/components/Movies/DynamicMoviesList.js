@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import AddMovieForm from "./AddMovieForm";
 import { dynamicMoviesList } from "./data";
 import ImprovedMovieCard from "./ImprovedMovieCard";
 
@@ -25,8 +26,23 @@ const DynamicMovieList = () => {
     (movieItem) => movieItem.hasOscars === showOscarAwarded
   );
 
+  // Add movie method that adds an incoming movie to the state of DynamicMoviesList
+  const addMovieHandler = (newMovieItem) => {
+    // Make copy of state so that we aren't directly mutating the state.
+    const moviesCopy = [...movies];
+
+    // Push the new movie to the movies copy array.
+    moviesCopy.push(newMovieItem);
+
+    // setMovies - updating the values in the state 'movies'
+    setMovies(moviesCopy);
+  };
+
   return (
     <div>
+      {/* Movie Form */}
+      <AddMovieForm addMovie={addMovieHandler} />
+
       {/* Mapping through the new filtered list so that our button at the bottom can work */}
       {filteredMovies.map((movieItem, index) => (
         <ImprovedMovieCard
@@ -38,7 +54,9 @@ const DynamicMovieList = () => {
 
       {/* Button that uses the toggleMovies to toggle movies according to whether they have oscars or not */}
       <button onClick={() => toggleMovies()}>
-        {showOscarAwarded ? "Hide Oscar Awarded" : "Show Oscar Awarded"}
+        {showOscarAwarded
+          ? "Hide movies with Oscars"
+          : "Show Movies with Oscars"}
       </button>
     </div>
   );
