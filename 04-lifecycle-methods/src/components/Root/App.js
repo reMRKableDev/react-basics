@@ -11,7 +11,8 @@ import GifApp from "../GiphyApp/GifRoot/GifApp";
 const App = () => {
   return (
     <section className="app">
-      <CounterApp />
+      {/* <CounterApp /> */}
+      <GifApp />
     </section>
   );
 };

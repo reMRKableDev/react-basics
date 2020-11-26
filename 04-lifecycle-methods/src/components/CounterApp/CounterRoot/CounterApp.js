@@ -16,8 +16,10 @@ const CounterApp = () => {
       </h2>
       <button onClick={stopCounter}>Dismount the counter</button>
 
-      <Counter countProps={0} />
+      {/* <h3>Counter without hooks</h3>
+      <Counter countProps={0} /> */}
 
+      <h3>Counter with hooks</h3>
       <CounterHook countProps={0} />
     </div>
   ) : null;

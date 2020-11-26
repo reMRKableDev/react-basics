@@ -16,11 +16,24 @@ const CounterHook = (props) => {
   };
 
   // using useEffect to mimic lifecycle methods
+  /* useEffect(() => {
+    console.log("Component DID MOUNT.");
+
+    console.log("Component Counter UPDATED from: ", count);
+    console.log("Component Counter UPDATED from: ", countFromApp);
+    return () => {
+      console.log(
+        "Behavior right before the component is removed from the DOM."
+      );
+    };
+  }, [count, countFromApp]); */
+
   useEffect(() => {
     console.log("Component DID MOUNT.");
 
     console.log("Component Counter UPDATED from: ", count);
     console.log("Component Counter UPDATED from: ", countFromApp);
+
     return () => {
       console.log(
         "Behavior right before the component is removed from the DOM."

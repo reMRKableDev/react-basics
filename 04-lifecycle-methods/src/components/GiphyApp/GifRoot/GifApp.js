@@ -31,9 +31,7 @@ class GifApp extends Component {
 
   handleSearchForGif = () => {
     const API_KEY = "FN5bl5OrR6NlDWGWNhT1F60hblyHMCGt";
-    const searchInput = this.state.searchBarInput
-      ? this.state.searchBarInput
-      : "kanye west";
+    const searchInput = this.state.searchBarInput ? this.state.searchBarInput : "kanye west";
 
     axios
       .get(
