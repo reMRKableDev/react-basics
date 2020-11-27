@@ -1,6 +1,7 @@
 import React from "react";
 import "./Gifs.css";
 
+/* Gif Component - renders the individual gifs */
 const Gif = ({ gif, selectGifClick }) => {
   return (
     <img
