@@ -30,7 +30,12 @@ class SelectedGif extends Component {
   render() {
     return (
       <div className="gif-selected">
-        <img src={this.props.selected.downsized_large.url} alt="gif" />
+        {this.state.selectedGifResult && (
+          <img
+            src={this.state.selectedGifResult.downsized_large.url}
+            alt="gif"
+          />
+        )}
       </div>
     );
   }
