@@ -1,0 +1,20 @@
+h1 {
+  text-decoration: underline;
+}
+
+h1 span {
+  text-transform: uppercase;
+}
+
+.content {
+  display: flex;
+  height: 78vh;
+}
+
+.selected-gif-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}

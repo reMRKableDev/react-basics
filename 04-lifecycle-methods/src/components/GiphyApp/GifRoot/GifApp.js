@@ -6,6 +6,7 @@ import SearchBar from "../Search/SearchBar";
 import GifList from "../Gifs/GifList";
 import SelectedGif from "../Gifs/SelectedGif";
 
+/* Class version */
 class GifApp extends Component {
   state = {
     searchBarInput: "",
@@ -68,10 +69,10 @@ class GifApp extends Component {
         <h1>
           <span>Gif</span>-ted experience
         </h1>
+
         {/* SearchBar component */}
         <SearchBar addSearchInput={this.handleAddSearchBarInputToAppState} />
 
-        {/* GifList Component */}
         <div className="content">
           {this.state.gifListResults.length ? (
             <GifList
@@ -79,12 +80,12 @@ class GifApp extends Component {
               selectGifClick={this.handleSelectedGif}
             />
           ) : (
-            "Loading data from giphy..."
+            "Loading data from giphy... "
           )}
 
           <div className="selected-gif-result">
             {/* Selected Gif Component */}
-            {this.state.selectedGif.images && (
+            {this.state.selectedGif && (
               <SelectedGif selected={this.state.selectedGif.images} />
             )}
 
@@ -100,5 +101,8 @@ class GifApp extends Component {
     );
   }
 }
+
+// TODO: Make a functional component version
+/* Functional version */
 
 export default GifApp;
