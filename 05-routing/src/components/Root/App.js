@@ -1,21 +1,25 @@
 import React from "react";
-import axios from "axios";
+import { Switch, Route } from "react-router-dom";
 import "./App.css";
 
-/* Simple Example of Lifecycle Methods */
-import CounterApp from "../CounterApp/CounterRoot/CounterApp";
-
-/* A More Complex Example - combines class components & functional components  */
-import GifApp from "../GiphyApp/GifRoot/GifApp";
-
-import GifAppHooksOnly from "../GiphyAppFunctionalOnly/GifRoot/GifApp";
+import Navbar from "../Navbar/Navbar";
+import Home from "../Home/Home";
+import About from "../About/About";
+import { Projects } from "../Projects/Projects";
+import ProjectDetails from "../Projects/ProjectDetails";
+import NotFound from "../NotFound/NotFound";
 
 const App = () => {
   return (
     <section className="app">
-      {/* <CounterApp /> */}
-      {/* <GifApp /> */}
-      <GifAppHooksOnly />
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route exact path="/projects" component={Projects} />
+        <Route exact path="/projects/:id" component={ProjectDetails} />
+        <Route component={NotFound} />
+      </Switch>
     </section>
   );
 };
