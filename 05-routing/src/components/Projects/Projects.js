@@ -40,6 +40,7 @@ export const Projects = () => {
             </h3>
             <h4>{eachProject.technologies}</h4>
             <hr />
+            <Link to="/about">About in Projects </Link>
           </div>
         );
       })}
