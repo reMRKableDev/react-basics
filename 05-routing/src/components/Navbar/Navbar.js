@@ -1,29 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
+/* <Link> --> Attach clickable links to different pages. */
+/* <NavLink> --> special version of <Link> that adds styling attributes. */
 const Navbar = () => {
   return (
     <nav className="nav-style">
       <ul>
         <li>
-          <Link to="/">Home</Link>
-          {/* <NavLink activeStyle={{ color: "red" }} to="/">
+          <NavLink activeStyle={{ color: "red" }} exact to="/">
             Home
-          </NavLink> */}
+          </NavLink>
         </li>
         <li>
-          <Link to="/about">About</Link>
-          {/* <NavLink activeStyle={{ color: "red" }} to="/about">
+          <NavLink activeStyle={{ color: "red" }} to="/about">
             About
-          </NavLink> */}
+          </NavLink>
         </li>
         <li>
           <Link to="/projects" style={{ textDecoration: "none" }}>
             Projects
           </Link>
-          {/* <NavLink activeStyle={{ color: "red" }} to="/projects">
-            Projects
-          </NavLink> */}
         </li>
       </ul>
     </nav>
