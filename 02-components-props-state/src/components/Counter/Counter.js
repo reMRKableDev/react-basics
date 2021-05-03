@@ -9,7 +9,7 @@ class Counter extends Component {
   };
 
   handleIncrementClick = () => {
-    this.setState({ count: this.state.count + 1, age: this.state.age + 10 });
+    this.setState({ count: this.state.count + 1 });
   };
 
   handleDecrementClick = () => {
@@ -21,10 +21,7 @@ class Counter extends Component {
       <div className="counter-container">
         <h3>Class component with state the modern way</h3>
         <p>{this.state.count}</p>
-        <p>{this.state.age}</p>
 
-        {this.state.age > 33 ? <p>Hello Ceyda!</p> : null}
-        
         <button onClick={this.handleDecrementClick}>-</button>
         <button onClick={this.handleIncrementClick}>+</button>
       </div>
