@@ -1,27 +1,25 @@
 import React from "react";
 import "./App.css";
 import mario from "./assets/mario.png";
+import { pet, petList, nestedPetList } from "./data";
 
 function App() {
-  // Creating React elements using .createElement (No JSX).
+  /*
+      CREATE A REACT ELEMENT:
+        - Using React.createElement --> directly create your element, no JSX.
+        - With JSX
+  */
   const reactElement = React.createElement(
     "p",
     null,
     "Hi, I'm a React element made without JSX"
   );
 
-  // Creating React elements using JSX
   const jsxElement = <p>Hi, I'm a React element made using JSX</p>;
 
-  // Embedded Variables
-  const pet = {
-    name: "Whiskers",
-    type: "Cat",
-  };
-
-  // Function execution (simple data set)
-  const petList = ["Whiskers", "Goofy", "Alvin"];
-
+  /* 
+    HELPER FUNCTIONS --> for mapping through arrays. 
+  */
   const showMyPets = (arrayOfPets) => {
     const eachPet = arrayOfPets.map((pet) => (
       <p>My favorite pet is called {pet}</p>
@@ -29,25 +27,6 @@ function App() {
 
     return eachPet;
   };
-
-  // Function execution (nested data set)
-  const nestedPetList = [
-    {
-      id: 1,
-      name: "Whiskers",
-      type: "Cat",
-    },
-    {
-      id: 2,
-      name: "Goofy",
-      type: "Dog",
-    },
-    {
-      id: 3,
-      name: "Alvin",
-      type: "Chipmunk",
-    },
-  ];
 
   const showMyNestedPets = (arrayOfPets) => {
     const eachPet = arrayOfPets.map((pet) => (
