@@ -1,29 +1,14 @@
 import React, { Component } from "react";
 import "./App.css";
 
-/* Imported components */
-import PetList from "../Pets/PetList";
-import Counter from "../Counter/Counter";
-import CounterOldState from "../Counter/CounterOldState";
-import CounterHook from "../Counter/CounterHook";
+/* Nested Data */
+import { nestedPetList } from "./data";
 
-const nestedPetList = [
-  {
-    id: 1,
-    name: "Whiskers",
-    type: "Cat",
-  },
-  {
-    id: 2,
-    name: "Goofy",
-    type: "Dog",
-  },
-  {
-    id: 3,
-    name: "Alvin",
-    type: "Chipmunk",
-  },
-];
+/* Imported components */
+import PetList from "./components/Pets/PetList";
+import Counter from "./components/Counter/Counter";
+import CounterHook from "./components/Counter/CounterHook";
+import CounterOldState from "./components/Counter/CounterOldState";
 
 /* Class Component */
 class App extends Component {

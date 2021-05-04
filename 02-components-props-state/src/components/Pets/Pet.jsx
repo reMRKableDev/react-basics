@@ -18,7 +18,6 @@ const Pet = ({ pet, onClickHandler }) => {
 /* Functional component with props object */
 /* const Pet = (props) => {
   const onClickHandlerForPet = () => props.onClickHandler(props.pet);
-
   return (
     <article className="pet-container">
       <h3>Id # {props.pet.id}</h3>
