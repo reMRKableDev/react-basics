@@ -5,15 +5,14 @@ import "./Counter.css";
 class Counter extends Component {
   state = {
     count: 0,
-    age: 23,
-  };
-
-  handleIncrementClick = () => {
-    this.setState({ count: this.state.count + 1 });
   };
 
   handleDecrementClick = () => {
     this.setState({ count: this.state.count - 1 });
+  };
+
+  handleIncrementClick = () => {
+    this.setState({ count: this.state.count + 1 });
   };
 
   render() {
