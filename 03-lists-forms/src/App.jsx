@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
 
-import MoviesList from "../Movies/MoviesList";
-import DynamicMoviesList from "../Movies/DynamicMoviesList";
+import MoviesList from "./components/MovieList/MoviesList";
+import DynamicMoviesList from "./components/DynamicMovieList/DynamicMoviesList";
 
 const App = () => {
   return (
