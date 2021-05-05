@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import AddMovieForm from "./AddMovieForm";
-import AddMovieFormAlternative from "./AddMovieFormAlternative";
-import { dynamicMoviesList } from "./data";
-import ImprovedMovieCard from "./ImprovedMovieCard";
+import AddMovieForm from "../Forms/AddMovieForm";
+import { dynamicMoviesList } from "../../data";
+import ImprovedMovieCard from "../ImprovedMovieCard/ImprovedMovieCard";
 
 const DynamicMovieList = () => {
   const [movies, setMovies] = useState(dynamicMoviesList);
@@ -43,9 +42,6 @@ const DynamicMovieList = () => {
     <div>
       {/* Movie Form */}
       <AddMovieForm addMovie={addMovieHandler} />
-
-      {/* Movie Form Alternative - uncomment to use */}
-      {/* <AddMovieFormAlternative addMovie={addMovieHandler} /> */}
 
       {/* Mapping through the new filtered list so that our button at the bottom can work */}
       {filteredMovies.map((movieItem, index) => (

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Movies.css";
 
 const initialState = {
   title: "",
