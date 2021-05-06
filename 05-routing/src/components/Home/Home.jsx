@@ -2,13 +2,14 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div>
-      <div>
-        <h3>Welcome to my portfolio page! My name is</h3>
-        <h1>Ironhacker</h1>
-        <p>and I'm Web Developer!</p>
-      </div>
-    </div>
+    <section className="section is-large">
+      <h1 className="title has-text-centered is-uppercase">
+        Welcome to the app!
+      </h1>
+      <p className="has-text-centered">
+        You can navigate to the different pages via the links on the navbar.
+      </p>
+    </section>
   );
 };
 

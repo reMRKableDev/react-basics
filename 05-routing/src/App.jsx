@@ -22,7 +22,7 @@ import NotFound from "./components/NotFound/NotFound";
 
 const App = () => {
   return (
-    <section className="app">
+    <section className="container is-fluid">
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
