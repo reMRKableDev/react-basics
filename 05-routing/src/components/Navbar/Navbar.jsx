@@ -1,4 +1,5 @@
 import React from "react";
+import "./Navbar.css";
 import { Link, NavLink } from "react-router-dom";
 
 /* <Link> --> Attach clickable links to different pages. */
