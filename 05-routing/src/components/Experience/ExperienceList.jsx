@@ -1,12 +1,12 @@
 import React from "react";
-import placesWhereIWorked from "./experienceData.json";
+import { experienceList } from "../../data";
 import Experience from "./Experience";
 
 const ExperienceList = () => {
   return (
     <div className="">
       <h2>Work Experience:</h2>
-      {placesWhereIWorked.map((eachPlace, index) => (
+      {experienceList.map((eachPlace, index) => (
         <Experience key={index} {...eachPlace} />
       ))}
     </div>

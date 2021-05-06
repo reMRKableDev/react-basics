@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import "./App.css";
 
-import Navbar from "../Navbar/Navbar";
-import Home from "../Home/Home";
-import About from "../About/About";
-import { Projects } from "../Projects/Projects";
-import ProjectDetails from "../Projects/ProjectDetails";
-import NotFound from "../NotFound/NotFound";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./components/Home/Home";
+import About from "./components/About/About";
+import { Projects } from "./components/Projects/Projects";
+import ProjectDetails from "./components/Projects/ProjectDetails";
+import NotFound from "./components/NotFound/NotFound";
 
 /* 
   1. Install "react-router-dom". (In your terminal)
@@ -21,26 +21,16 @@ import NotFound from "../NotFound/NotFound";
 */
 
 const App = () => {
-  const [isRedirected, setRedirected] = useState(false);
-
-  const handleClick = () => {
-    setRedirected(true);
-  };
-
   return (
-    <section className="app">
+    <section className="container is-fluid">
       <Navbar />
       <Switch>
-        <Route exact path="/">
-          {isRedirected ? <Redirect to="/about" /> : <Home />}
-        </Route>
+        <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route exact path="/projects" component={Projects} />
         <Route path="/projects/:id" component={ProjectDetails} />
         <Route component={NotFound} />
       </Switch>
-
-      <button onClick={handleClick}>Go to about</button>
 
       {/* <Switch>
         <Route path="/about" component={About} />

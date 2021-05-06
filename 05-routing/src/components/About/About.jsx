@@ -4,11 +4,11 @@ import Education from "../Education/EducationList";
 
 const About = () => {
   return (
-    <div>
-      <div style={{ width: "40%", float: "left" }}>
+    <div className="columns">
+      <div className="column">
         <Education />
       </div>
-      <div style={{ width: "60%", float: "right" }}>
+      <div className="column">
         <Experience />
       </div>
     </div>
