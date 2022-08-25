@@ -12,7 +12,7 @@ const GifApp = () => {
   const [gifListResults, setGifListResults] = useState([]);
   const [selectedGif, setSelectedGif] = useState({});
 
-    // Function handler that makes an api call to fetch gifs.
+  // Function handler that makes an api call to fetch gifs.
   // The gif results are the updated when the call is made.
   const handleSearchForGif = () => {
     const API_KEY = "FN5bl5OrR6NlDWGWNhT1F60hblyHMCGt";
@@ -47,16 +47,6 @@ const GifApp = () => {
     handleSearchForGif();
   }, [searchBarInput])
 
-  // componentDidMount() {
-  //   this.handleSearchForGif();
-  // }
-
-  // Lifecycle method that executes when the application state is updated.
-  // componentDidUpdate(prevState) {
-  //   if (this.state.searchBarInput !== prevState.searchBarInput) {
-  //     this.handleSearchForGif();
-  //   }
-  // }
     return (
       <section className="app">
         <h1>

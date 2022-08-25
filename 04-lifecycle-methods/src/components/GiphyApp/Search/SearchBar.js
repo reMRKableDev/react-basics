@@ -36,6 +36,7 @@ const SearchBar = ({ addSearchInput }) => {
   );
 };
 
+export default SearchBar;
 /* SearchBar Component */
 /* class SearchBar extends React.Component {
   state = initialState;
@@ -70,5 +71,3 @@ const SearchBar = ({ addSearchInput }) => {
     );
   }
 } */
-
-export default SearchBar;
