@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import Counter from "../CounterComponents/Counter";
+// import Counter from "../CounterComponents/Counter";
 import CounterHook from "../CounterComponents/CounterHook";
 
 const CounterApp = () => {
