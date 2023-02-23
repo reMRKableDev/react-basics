@@ -67,6 +67,7 @@ Please note that there is a code of conduct, please follow it in all your intera
 ## Authors 💻
 
 - **Malcolm R. Kente** - _Initial work_ - [reMRKable Dev](https://remrkabledev.com/)
+- **Lloyd Chambrier** - _Maintenance work_ - [Lloyd Chambrier](https://lloydc.github.io/)
 
 ## Acknowledgments 🗣️
 
