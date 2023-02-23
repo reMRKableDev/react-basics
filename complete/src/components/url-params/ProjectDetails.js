@@ -1,9 +1,9 @@
 import React from "react";
 import { myProjects } from "./Projects";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-const projectDetails = (props) => {
-  console.log(props);
+const ProjectDetails = () => {
+  const {id} = useParams();
 
   const getProject = (id) => {
     const theProject = (oneProject) => {
@@ -12,8 +12,7 @@ const projectDetails = (props) => {
     return myProjects.find(theProject);
   };
 
-  const { params } = props.match;
-  const foundProject = getProject(params.id);
+  const foundProject = getProject(id);
 
   return (
     <div>
@@ -28,4 +27,4 @@ const projectDetails = (props) => {
   );
 };
 
-export default projectDetails;
+export default ProjectDetails;
