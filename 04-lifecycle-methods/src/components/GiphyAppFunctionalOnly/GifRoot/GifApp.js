@@ -31,7 +31,10 @@ const GifApp = () => {
   // useEffects takes two parameters:
   //  1. handleSearchForGif - A callback function which is the action that should happen when a component either mounts or is updated.
   // 2. [searchBarInput] - The value that is monitored when an update occurs.
-  useEffect(handleSearchForGif, [searchBarInput]);
+  useEffect(()=>{
+    handleSearchForGif();
+    // eslint-disable-next-line
+  }, [searchBarInput]);
 
   // Function handler for updating the 'searchInput' state.
   // This function is passed down as a prop and used in the SearchBar component.
@@ -44,7 +47,7 @@ const GifApp = () => {
 
   // Function handler for updating the 'selectedGif' state
   // This function is passed down as a prop and used by the button that unmounts the SelectedGif
-  const handleToggleSelectedGif = () => setSelectedGif({});
+  // const handleToggleSelectedGif = () => setSelectedGif({});
 
   return (
     <section className="app">

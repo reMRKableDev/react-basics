@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import "./SearchBar.css";
 
 const initialState = { userInput: "" };
@@ -36,8 +36,9 @@ const SearchBar = ({ addSearchInput }) => {
   );
 };
 
+export default SearchBar;
 /* SearchBar Component */
-/* class SearchBar extends Component {
+/* class SearchBar extends React.Component {
   state = initialState;
 
   // Function handler that checks for the changes in the input fields
@@ -70,5 +71,3 @@ const SearchBar = ({ addSearchInput }) => {
     );
   }
 } */
-
-export default SearchBar;

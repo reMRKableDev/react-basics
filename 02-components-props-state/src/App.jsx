@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 /* Nested Data */
@@ -10,28 +10,24 @@ import Counter from "./components/Counter/Counter";
 import CounterHook from "./components/Counter/CounterHook";
 import CounterOldState from "./components/Counter/CounterOldState";
 
-/* Class Component */
-class App extends Component {
-  state = {
-    selectedPet: "",
+/* Functional Component */
+function App(){
+const [selectedPet, setSelectedPet] = useState("");
+const handleSelectedClick = (incomingPet) => {
+   setSelectedPet(incomingPet);
   };
 
-  handleSelectedClick = (incomingPet) => {
-    this.setState({ selectedPet: incomingPet });
-  };
-
-  render() {
     return (
       <section className="app">
         <h1>Props</h1>
         <p>
-          The selected pet is <b>{this.state.selectedPet.name}</b>
+          The selected pet is <b>{selectedPet.name}</b>
         </p>
 
         <div className="container">
           <PetList
             nestedPetListFromApp={nestedPetList}
-            onClickHandler={this.handleSelectedClick}
+            onClickHandler={handleSelectedClick}
           />
         </div>
         <h1>State</h1>
@@ -42,7 +38,6 @@ class App extends Component {
         </div>
       </section>
     );
-  }
 }
 
 export default App;

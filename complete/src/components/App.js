@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 /* import { listItems } from "./mapping-lists/ListDemo";
 import MoviesList from "./mapping-lists/MoviesList";
@@ -30,13 +30,13 @@ class App extends Component {
       <div>
         <Navbar />
 
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route exact path="/projects" component={Projects} />
-          <Route exact path="/projects/:id" component={ProjectDetails} />
-          <Route path="*" component={NotFoundPage} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<ProjectDetails />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
       </div>
     );
   }
